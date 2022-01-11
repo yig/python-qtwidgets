@@ -1,5 +1,5 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from qtwidgets import PaletteGrid, PaletteHorizontal, PaletteVertical
+from qtpy import QtCore, QtGui, QtWidgets
+from equalizer import Equalizer
 
 
 class Window(QtWidgets.QMainWindow):
@@ -7,7 +7,7 @@ class Window(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
-        palette = PaletteGrid('17undertones') # or PaletteHorizontal, or PaletteVertical
+        palette = Palette('paired12')
         palette.selected.connect(self.show_selected_color)
         self.setCentralWidget(palette)
 

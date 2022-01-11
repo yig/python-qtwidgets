@@ -1,5 +1,5 @@
-import PySide2
-from PySide2 import QtCore, QtGui, QtWidgets
+import qtpy
+from qtpy import QtCore, QtGui, QtWidgets
 from toggle import Toggle, AnimatedToggle
 
 

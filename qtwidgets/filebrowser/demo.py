@@ -1,5 +1,5 @@
-from PySide2 import QtWidgets
-from qtwidgets import ColorButton
+from qtpy import QtCore, QtGui, QtWidgets
+from file_browser import FileBrowser
 
 
 class Window(QtWidgets.QMainWindow):
@@ -7,8 +7,8 @@ class Window(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
-        palette = ColorButton(color='red')
-        palette.colorChanged.connect(self.show_selected_color)
+        palette = Palette('paired12')
+        palette.selected.connect(self.show_selected_color)
         self.setCentralWidget(palette)
 
     def show_selected_color(self, c):
